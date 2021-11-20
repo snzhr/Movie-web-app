@@ -8,16 +8,30 @@ function createCard(imgSrc, title, vote, year, movieid){
   }else{
       imgSrc = 'https://d32qys9a6wm9no.cloudfront.net/images/movies/poster/500x735.png';
   }
+
+  function rank(){
+    if (vote >= 6.0) {
+      return 'bg-success';
+    }
+    else if(vote >=5 && vote < 6.0){
+        return 'bg-warning'
+    }
+    else{
+      return 'bg-danger';
+    }
+  }
+  
   
   const movieCard = 
   `<div class="card m-1 card-cw">
   <img src="${imgSrc}" class="card-img-top movie-poster" alt="movie-image">
+  <span class="badge position-absolute ${rank()}">${vote}</span>
   <div class="card-body">
     <h5 class="card-title movie-name" data-id="${movieid}">${title}</h5>
-    <p class="card-text movie-desc">${vote}</p>
+    <!-- <p class="card-text movie-desc">${vote}</p> --> 
   </div>
   <ul class="list-group list-group-flush">
-      <li class="list-group-item" id="year">${year}</li>
+      <li class="list-group-item" id="year">Дата релиза: ${year}</li>
     </ul>
   </div>
   `;
