@@ -38,6 +38,17 @@ async function getSpecificGenre(genreId){
     return dataJson;
   }
 
+  async function  getVideo(movieId) {
+    const res = await fetch(`https://api.themoviedb.org/3/movie/585245/videos?api_key=${apiKey}&language=ru-RU`)
+    const data = await res.json();
+    if (data.results.length > 0) {
+    console.log(data.results[0].key);
+    }
+    else{
+      console.log('No video');
+    }
+  }
+
 
 
 
