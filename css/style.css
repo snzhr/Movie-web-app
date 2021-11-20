@@ -1,0 +1,48 @@
+.bg-custom {
+  background: #0a3040;
+}
+.main-content {
+  display: flex;
+}
+
+/* .movies-right {
+  width: 100%;
+  left: 20%;
+  display: block;
+} */
+.card-cw {
+  width: 24%;
+}
+.single-genre {
+  color: #dcdcdc;
+}
+.single-genre:hover {
+  color: #dcdcdc;
+}
+
+.active-link {
+  background-color: #dcdcdc !important;
+  border-radius: 5px;
+}
+.active-link a {
+  color: #0a3040 !important;
+}
+.btn-close {
+  display: none;
+}
+.movie-name {
+  cursor: pointer;
+}
+
+/* ======================================================================================= */
+@media only screen and (max-width: 480px) {
+  .card-cw {
+    width: 100%;
+  }
+  .genres {
+    position: absolute;
+    left: -280px;
+    z-index: 2;
+    display: none !important;
+  }
+}
