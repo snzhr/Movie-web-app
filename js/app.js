@@ -175,14 +175,21 @@ return getSingleMovie(mId).then(movie=>{
    document.getElementById('movies').innerHTML = '';
    document.getElementById('movies')
    .insertAdjacentHTML('afterbegin',
-   `<div class="card mb-3">
-   <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" class="card-img-top" alt="${movie.title}">
-   <div class="card-body">
-     <h5 class="card-title">${movie.title}</h5>
-     <p class="card-text">${movie.overview}</p>
-     <p class="card-text"><small class="text-muted">Release date: ${movie.release_date}</small></p>
-   </div>
- </div>
-   `)
+   `
+<div class="card mb-3" >
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" class="img-fluid rounded-start" alt="${movie.title}">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">${movie.title}</h5>
+        <p class="card-text">${movie.overview}</p>
+        <p class="card-text"><small class="text-muted">${movie.release_date}</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+`)
 })
 }
