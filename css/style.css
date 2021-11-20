@@ -10,7 +10,6 @@
   padding: 0.3em 0.7em;
   font-size: 1em;
 }
-
 .card-cw {
   width: 24%;
 }
@@ -34,9 +33,11 @@
 .movie-name {
   cursor: pointer;
 }
-
+#genres-btn {
+  display: none;
+}
 /* ======================================================================================= */
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 550px) {
   .card-cw {
     width: 100%;
   }
@@ -44,6 +45,27 @@
     position: absolute;
     left: -280px;
     z-index: 2;
-    display: none !important;
+    /* display: none !important; */
+  }
+  .genresToLeft {
+    left: 0px !important;
+  }
+  #genres-btn {
+    display: block;
+    position: relative;
+    float: right;
+    top: 10px;
+    right: 20px;
   }
 }
+@media only screen and (min-width: 551px) and (max-width: 768px) {
+  .card-cw {
+    width: 100%;
+  }
+}
+
+/* @media only screen and (max-width: 992px) {
+  .card-cw {
+    width: 50%;
+  }
+} */
