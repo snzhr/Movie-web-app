@@ -137,6 +137,12 @@ const genresBlock = document.querySelector('.genres');
   document.getElementById('genres-btn').addEventListener('click',function(e){
     genresBlock.classList.toggle('genresToLeft');
     genresBlock.style.transition = 'left .5s ease'
+    if (e.currentTarget.innerText === 'Жанры') {
+      e.currentTarget.innerText = 'Закрыть';
+    }
+    else{
+      e.currentTarget.innerText = 'Жанры';
+    }
 
   }) 
 
