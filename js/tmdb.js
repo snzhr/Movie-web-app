@@ -1,4 +1,4 @@
-const apiKey = '<< your-api-key >>'
+const apiKey = '95686a04581c305cc6d7e4ccff9d039a'
 const query = 'now_playing'
 
 async function getMovies(url=`https://api.themoviedb.org/3/movie/${query}?api_key=${apiKey}&language=ru-RU&page=1`){
