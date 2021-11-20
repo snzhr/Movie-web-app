@@ -4,7 +4,7 @@ import { getMovies, getGenres, getSpecificGenre, searchMovie, getSingleMovie } f
 
 function createCard(imgSrc, title, vote, year, movieid){
   if (imgSrc) {
-      imgSrc = imgSrc;
+      imgSrc = 'https://image.tmdb.org/t/p/w500/'+imgSrc;
   }else{
       imgSrc = 'https://d32qys9a6wm9no.cloudfront.net/images/movies/poster/500x735.png';
   }
@@ -43,7 +43,7 @@ async function allMovies(){
   return await getMovies().then(movies=>{
     for (const movie of movies) {
       document.getElementById('movies')
-      .insertAdjacentHTML('afterbegin',createCard('https://image.tmdb.org/t/p/w500/'+movie.poster_path, movie.title, movie.vote_average, movie.release_date,movie.id))
+      .insertAdjacentHTML('afterbegin',createCard(movie.poster_path, movie.title, movie.vote_average, movie.release_date,movie.id))
     }
   }).then(()=>{
     let movieTitleBtns = document.getElementsByClassName('movie-name');
@@ -88,7 +88,7 @@ getGenres().then(data=>{
         getSpecificGenre(this.dataset.index).then(movies=>{
           for (const movie of movies) {
             document.getElementById('movies')
-            .insertAdjacentHTML('afterbegin',createCard('https://image.tmdb.org/t/p/w500/'+movie.poster_path, movie.title, movie.vote_average, movie.release_date,movie.id))
+            .insertAdjacentHTML('afterbegin',createCard(movie.poster_path, movie.title, movie.vote_average, movie.release_date,movie.id))
           }
         }).then(()=>{
           let movieTitleBtns = document.getElementsByClassName('movie-name');
@@ -145,7 +145,7 @@ document.getElementById('searchForm').addEventListener('submit',function(e){
         document.getElementById('movies').innerHTML = '';
         for (const movie of movies) {
           document.getElementById('movies')
-          .insertAdjacentHTML('afterbegin',createCard('https://image.tmdb.org/t/p/w500/'+movie.poster_path, movie.title, movie.vote_average, movie.release_date, movie.id))
+          .insertAdjacentHTML('afterbegin',createCard(movie.poster_path, movie.title, movie.vote_average, movie.release_date, movie.id))
         }
         searchField = '';
       }).then(()=>{
