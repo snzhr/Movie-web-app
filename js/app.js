@@ -135,8 +135,6 @@ getGenres().then(data=>{
 
 const genresBlock = document.querySelector('.genres');
   document.getElementById('genres-btn').addEventListener('click',function(e){
-    //   genresBlock.style.left = '0';
-    // genresBlock.style.transition = 'left .5s ease'
     genresBlock.classList.toggle('genresToLeft');
     genresBlock.style.transition = 'left .5s ease'
 
