@@ -74,6 +74,21 @@ function createGenre(genreName, genreId){
   return genre;
 }
 
+
+const genresBlock = document.querySelector('.genres');
+  document.getElementById('genres-btn').addEventListener('click',function(e){
+    genresBlock.classList.add('genresToLeft');
+    genresBlock.style.transition = 'left .5s ease'
+    // if (e.currentTarget.innerText === 'Жанры') {
+    //   e.currentTarget.innerText = 'Закрыть';
+    // }
+    // else{
+    //   e.currentTarget.innerText = 'Жанры';
+    // }
+
+  })
+
+
 getGenres().then(data=>{
   const genres = [...data.genres]
   for (const genre of genres) {
@@ -107,7 +122,8 @@ getGenres().then(data=>{
         if (current.length === 0) {
           current.push(parent)
           parent.classList.add('active-link')
-          parent.lastElementChild.style.display='block';           
+          parent.lastElementChild.style.display='block';
+          genresBlock.classList.remove('genresToLeft')           
         }
         else{
           current[0].classList.remove('active-link')
@@ -115,7 +131,8 @@ getGenres().then(data=>{
           current.pop();
           current.push(parent) 
           parent.classList.add('active-link')         
-          parent.lastElementChild.style.display='block';           
+          parent.lastElementChild.style.display='block';
+          genresBlock.classList.remove('genresToLeft')           
         }
 
 
@@ -132,19 +149,7 @@ getGenres().then(data=>{
   }
   
 })
-
-const genresBlock = document.querySelector('.genres');
-  document.getElementById('genres-btn').addEventListener('click',function(e){
-    genresBlock.classList.toggle('genresToLeft');
-    genresBlock.style.transition = 'left .5s ease'
-    if (e.currentTarget.innerText === 'Жанры') {
-      e.currentTarget.innerText = 'Закрыть';
-    }
-    else{
-      e.currentTarget.innerText = 'Жанры';
-    }
-
-  }) 
+ 
 
 
 
